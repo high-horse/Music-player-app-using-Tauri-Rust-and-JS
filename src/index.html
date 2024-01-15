@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Music Player</title>
+  <!-- Load FontAwesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- Load the custom CSS style file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="player" style=" text-align: center; align-items: center; padding: 50px;">
+    <div class="details">
+      <div class="now-playing" style="padding: 10px;">PLAYING x OF y</div>
+      <div class="track-art"></div>
+      <div class="track-name" style="padding: 5px; font-weight: bold;font-size: 25px;">Track Name</div>
+      <div class="track-artist" style="padding: 5px;">Track Artist</div>
+      <div
+        style="min-height: 250px; border: 2px solid black; border-radius: 20px; margin: 10px 25%; max-width: 50%; display:flex; justify-content: center;">
+        <div style=""></div>
+      </div>
+    </div>
+    <div style="  display: flex; justify-content: space-evenly;"></div>
+    <div class="buttons" style="display:flex; justify-content: space-around ;  margin: 10px 25%; max-width: 50%; ">
+      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+    </div>
+    <div class="slider_container"
+      style="max-width: 50%;  display: flex; justify-content: space-evenly;  margin: 10px 25%; max-width: 50%; ">
+      <div class="current-time">00:00</div>
+      <input type="range" style="width: 60%" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()" width>
+      <div class="total-duration">00:00</div>
+    </div>
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div>
+  </div>
+
+  <!-- Load the main script for the player -->
+  <script src="main.js"></script>
+</body>
+
+</html>
